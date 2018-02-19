@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import Square from "./Square"
+
 class Rack extends Component {
 
   constructor(props){
@@ -7,8 +9,19 @@ class Rack extends Component {
   }
 
   render(){
+
+    const tiles = this.props.tiles.map((element, index) => {
+      return(
+        <Square
+          key={index}
+          tile={element}
+        />
+      )
+    })
+
     return(
       <div className="rack">
+        {tiles}
       </div>
     )
   }

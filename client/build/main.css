@@ -32,6 +32,10 @@
   background-color: #b2b2ff;
 }
 
+.tile{
+  background-color: #FFFFF0;
+}
+
 /*Board*/
 
 .board {
