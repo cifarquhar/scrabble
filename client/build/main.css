@@ -32,17 +32,13 @@
 
 .board {
   display         : flex;
-  /*justify-content : space-between;*/
-  
   width   : 572px;
   height  : 572px;
-  /*padding : 5px;*/
   border  : 1px solid black;
   margin: auto;
 }
   
   .column {
     display         : flex;
-    /*justify-content: space-between;*/
     flex-direction  : column;
   }
