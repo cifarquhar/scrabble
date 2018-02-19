@@ -2,11 +2,32 @@
   text-align: center;
 }
 
+.square-text{
+  text-align: center;
+  line-height: 38px;
+}
+
 .square{
   height: 38px;
   width: 38px;
   background-color: #004000;
   border: 1px solid white;
+}
+
+.square.triple-word{
+  background-color: #990000;
+}
+
+.square.double-word{
+  background-color: #ffb2b2;
+}
+
+.square.triple-letter{
+  background-color: #000099;
+}
+
+.square.double-letter{
+  background-color: #b2b2ff;
 }
 
 .board {
