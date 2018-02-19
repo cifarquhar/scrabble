@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import Square from "./Square"
+import Column from "./Column"
 
 class Board extends Component {
 
@@ -9,8 +9,22 @@ class Board extends Component {
   }
 
   render(){
+
+    const columnNumbers = ["","","","","","","","","","","","","","","",]
+
+    const columns = columnNumbers.map((element, index) => {
+      return(
+        <Column
+        key={index}
+        columnID={index + 1}
+        />
+      )
+    })
+
     return (
-      <h4>Board Goes Here</h4>
+      <div className="board">
+        {columns}
+      </div>
     )
   }
 

@@ -3,11 +3,25 @@
 }
 
 .square{
-  height: 20px;
-  width: 20px;
+  height: 38px;
+  width: 38px;
   background-color: #004000;
+  border: 1px solid white;
 }
 
-.boardColumn{
-  height: 30px;
+.board {
+  display         : flex;
+  /*justify-content : space-between;*/
+  
+  width   : 572px;
+  height  : 572px;
+  /*padding : 5px;*/
+  border  : 1px solid black;
+  margin: auto;
 }
+  
+  .column {
+    display         : flex;
+    /*justify-content: space-between;*/
+    flex-direction  : column;
+  }
