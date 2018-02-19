@@ -7,6 +7,8 @@
   line-height: 38px;
 }
 
+/*Squares*/
+
 .square{
   height: 38px;
   width: 38px;
@@ -30,15 +32,27 @@
   background-color: #b2b2ff;
 }
 
+/*Board*/
+
 .board {
   display         : flex;
   width   : 572px;
   height  : 572px;
   border  : 1px solid black;
   margin: auto;
+  margin-top: 75px;
 }
   
-  .column {
-    display         : flex;
-    flex-direction  : column;
-  }
+.column {
+  display         : flex;
+  flex-direction  : column;
+}
+
+.rack{
+  width: 250px;
+  height: 45px;
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  background-color: #004000;
+}

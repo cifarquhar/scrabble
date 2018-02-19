@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Board from "../components/Board"
+import Rack from "../components/Rack"
 import TILES from "../constants/Tiles"
 
 class GameContainer extends Component {
@@ -19,6 +20,7 @@ class GameContainer extends Component {
       <div>
         <h1 className="heading-text">Welcome to Scrabble!</h1>
         <Board/>
+        <Rack/>
       </div>
     )
   }
