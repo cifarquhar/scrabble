@@ -1,0 +1,13 @@
+.heading-text{
+  text-align: center;
+}
+
+.square{
+  height: 20px;
+  width: 20px;
+  background-color: #004000;
+}
+
+.boardColumn{
+  height: 30px;
+}
