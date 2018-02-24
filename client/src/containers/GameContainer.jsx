@@ -16,9 +16,9 @@ class GameContainer extends Component {
       return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  pickTiles(){
+  pickTiles(num){
     let playerTiles = []
-    for (let i = 0; i < 7; i++){
+    for (let i = 0; i < num; i++){
       let tileIndex = this.getRandomInt(0, this.tiles.length - 1)
       let randomTile = this.tiles.splice(tileIndex,1)
       playerTiles.push(randomTile[0])
@@ -30,7 +30,7 @@ class GameContainer extends Component {
 
     console.log(this.tiles)
 
-    let chosenTiles = this.pickTiles()
+    let chosenTiles = this.pickTiles(7)
 
     console.log(chosenTiles)
 
