@@ -1,7 +1,5 @@
 import Tile from "../models/Tile"
 
-let TILES = []
-
 const alphabet = [
   {
     letter: "A",
@@ -139,12 +137,26 @@ const alphabet = [
   },
 ]
 
-alphabet.forEach((letter) => {
-  let i = 0
-  while (i < letter.quantity) {
-    TILES.push(new Tile(letter.letter, letter.value))
-    i ++
-  }
-})
+// alphabet.forEach((letter) => {
+//   let i = 0
+//   while (i < letter.quantity) {
+//     TILES.push(new Tile(letter.letter, letter.value))
+//     i ++
+//   }
+// })
+
+function generateTileset(){
+  let tiles = []
+  alphabet.forEach((letter) => {
+    let i = 0
+    while (i < letter.quantity) {
+      tiles.push(new Tile(letter.letter, letter.value))
+      i ++
+    }
+  })
+  return tiles
+}
+
+let TILES = generateTileset()
 
 export default TILES
