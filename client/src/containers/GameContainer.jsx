@@ -45,10 +45,6 @@ class GameContainer extends Component {
 
     console.log(this.tiles)
 
-    // let chosenTiles = this.pickTiles(7)
-
-    //console.log(chosenTiles)
-
     return (
       <div>
         <h1 className="heading-text">Welcome to Scrabble!</h1>
