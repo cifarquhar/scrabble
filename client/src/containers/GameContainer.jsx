@@ -19,7 +19,7 @@ class GameContainer extends Component {
   pickTiles(){
     let playerTiles = []
     for (let i = 0; i < 7; i++){
-      let tileIndex = this.getRandomInt(0, this.tiles.length)
+      let tileIndex = this.getRandomInt(0, this.tiles.length - 1)
       let randomTile = this.tiles.splice(tileIndex,1)
       playerTiles.push(randomTile[0])
     }
