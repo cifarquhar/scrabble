@@ -19,6 +19,9 @@ class Square extends Component {
 
       this.value = ""
     }
+
+    this.selected = false
+
   }
 
   handleClick(){
