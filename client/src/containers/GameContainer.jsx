@@ -17,20 +17,22 @@ class GameContainer extends Component {
     }
   }
 
+
   getRandomInt(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
 
   pickTiles(num){
     let chosenTiles = this.state.playerTiles
     for (let i = 0; i < num; i++){
       let tileIndex = this.getRandomInt(0, this.tiles.length - 1)
       let randomTile = this.tiles.splice(tileIndex,1)
-      console.log(randomTile)
       chosenTiles.push(randomTile[0])
     }
     this.setState({playerTiles: chosenTiles})
   }
+
 
   generateTileset(){
     let tiles = []
@@ -44,6 +46,7 @@ class GameContainer extends Component {
     return tiles
   }
 
+
   startNewGame(){
     const check = confirm("Are you sure you want to start a new game?")
       if (check) {
@@ -53,10 +56,8 @@ class GameContainer extends Component {
       }
   }
 
+
   render(){
-
-    console.log(this.tiles)
-
     return (
       <div>
         <h1 className="heading-text">Welcome to Scrabble!</h1>
