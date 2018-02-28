@@ -26,6 +26,7 @@ class Square extends Component {
 
   handleClick(){
     console.log(this.coords)
+    this.props.clickHandler(this)
   }
 
   findClassName(){
@@ -63,7 +64,7 @@ this.value = "DL"
 
 render(){
 
-  if (!this.props.tile) this.findClassName()
+  if (this.class === "square") this.findClassName()
 
   return (
     <div className={this.class} onClick={this.handleClick.bind(this)}>

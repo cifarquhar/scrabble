@@ -15,6 +15,7 @@ class Rack extends Component {
         <Square
           key={index}
           tile={element}
+          clickHandler={this.props.clickHandler.bind(this)}
         />
       )
     })

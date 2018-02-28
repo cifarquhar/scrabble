@@ -14,7 +14,8 @@ class GameContainer extends Component {
     this.tiles = []
 
     this.state = {
-      playerTiles: []
+      playerTiles: [],
+      selectedTile: null
     }
   }
 
@@ -48,6 +49,21 @@ class GameContainer extends Component {
   }
 
 
+  setSelectedTile(tile){
+    this.setState({selectedTile: tile}, () => console.log(this.state.selectedTile))
+  }
+
+
+  placeSelectedTile(square){
+    if (this.state.selectedTile){
+      console.log(this.state.selectedTile)
+      square.class = "square tile"
+      square.value = this.state.selectedTile.props.tile.letter
+      this.setState({selectedTile: null}, () => console.log(this.state.selectedTile))
+    }
+  }
+
+
   startNewGame(){
     const check = confirm("Are you sure you want to start a new game?")
       if (check) {
@@ -64,7 +80,7 @@ class GameContainer extends Component {
 
     for (let i = 1; i <= 15; i ++){
       for (let j = 1; j <= 15; j++){
-        squares.push(<Square key={i.toString() + "-" + j.toString()}squareID={i} columnID={j} />)
+        squares.push(<Square key={i.toString() + "-" + j.toString()}squareID={i} columnID={j} clickHandler={this.placeSelectedTile.bind(this)}/>)
       }
     }
 
@@ -74,7 +90,7 @@ class GameContainer extends Component {
       <div>
         <h1 className="heading-text">Welcome to Scrabble!</h1>
         <Board squares={squares}/>
-        <Rack tiles={this.state.playerTiles}/>
+        <Rack tiles={this.state.playerTiles} clickHandler={this.setSelectedTile.bind(this)}/>
         <button onClick={this.startNewGame.bind(this)}>New Game</button>
       </div>
     )
