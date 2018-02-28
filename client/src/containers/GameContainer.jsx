@@ -2,15 +2,15 @@ import React, { Component } from "react"
 
 import Board from "../components/Board"
 import Rack from "../components/Rack"
-import NewGameButton from "../components/NewGameButton"
-import TILES from "../constants/Tiles"
+import Tile from "../models/Tile"
+import ALPHABET from "../constants/Alphabet"
 
 class GameContainer extends Component {
 
   constructor(props){
     super(props)
 
-    this.tiles = TILES
+    this.tiles = []
 
     this.state = {
       playerTiles: []
@@ -32,10 +32,22 @@ class GameContainer extends Component {
     this.setState({playerTiles: chosenTiles})
   }
 
+  generateTileset(){
+    let tiles = []
+    ALPHABET.forEach((letter) => {
+      let i = 0
+      while (i < letter.quantity) {
+        tiles.push(new Tile(letter.letter, letter.value))
+        i ++
+      }
+    })
+    return tiles
+  }
+
   startNewGame(){
     const check = confirm("Are you sure you want to start a new game?")
       if (check) {
-        this.tiles = TILES
+        this.tiles = this.generateTileset()
         this.setState({playerTiles: []}, () => this.pickTiles(7))
         
       }
