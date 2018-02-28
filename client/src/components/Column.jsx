@@ -22,7 +22,6 @@ class Column extends Component {
     //   )
     // })
 
-    console.log(this.props.squares)
     return (
       <div className="column">
         {this.props.squares}

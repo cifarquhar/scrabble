@@ -14,11 +14,8 @@ class Board extends Component {
 
     for (let i = 1; i <= 15; i++){
       let matchingSquares = this.props.squares.filter(square => square.props.columnID === i)
-      console.log(matchingSquares)
       filteredSquares.push(matchingSquares)
     }
-
-    console.log(filteredSquares)
 
     const columns = filteredSquares.map((element, index) => {
       return(
