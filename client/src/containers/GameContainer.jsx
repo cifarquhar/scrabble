@@ -56,10 +56,21 @@ class GameContainer extends Component {
 
   placeSelectedTile(square){
     if (this.state.selectedTile){
+      let indexToRemove = this.state.playerTiles.indexOf(this.state.selectedTile.tile)
+      console.log(indexToRemove)
+  
       square.class = "square tile"
       square.letter = this.state.selectedTile.tile.letter
       square.tile = this.state.selectedTile.tile
-      this.setState({selectedTile: null}, () => console.log(this.state.selectedTile))
+
+      //let updatedPlayerTiles = this.state.playerTiles
+
+      //updatedPlayerTiles.splice(indexToRemove,1)
+
+      this.setState({
+        selectedTile: null,
+        //playerTiles: updatedPlayerTiles
+      }, () => console.log(this.state.selectedTile))
     }
   }
 
@@ -84,7 +95,7 @@ class GameContainer extends Component {
       }
     }
 
-    console.log(squares)
+    console.log(this.state.playerTiles)
 
     return (
       <div>
