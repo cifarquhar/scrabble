@@ -58,6 +58,7 @@ class GameContainer extends Component {
     if (this.state.selectedTile){
       square.class = "square tile"
       square.letter = this.state.selectedTile.tile.letter
+      square.tile = this.state.selectedTile.tile
       this.setState({selectedTile: null}, () => console.log(this.state.selectedTile))
     }
   }
