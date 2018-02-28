@@ -56,8 +56,8 @@ class GameContainer extends Component {
 
   placeSelectedTile(square){
     if (this.state.selectedTile){
-      //square.class = "square tile"
-      square.value = this.state.selectedTile.props.tile.letter
+      square.class = "square tile"
+      square.letter = this.state.selectedTile.tile.letter
       this.setState({selectedTile: null}, () => console.log(this.state.selectedTile))
     }
   }

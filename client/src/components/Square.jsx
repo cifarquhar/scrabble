@@ -67,7 +67,7 @@ class Square extends Component {
 
 render(){
 
-  this.findClassName()
+  if (this.class === "square") this.findClassName()
 
   return (
     <div className={this.class} onClick={this.handleClick.bind(this)}>
