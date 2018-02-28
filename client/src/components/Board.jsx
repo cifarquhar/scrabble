@@ -10,22 +10,30 @@ class Board extends Component {
 
   render(){
 
-    const columnNumbers = ["","","","","","","","","","","","","","","",]
+    let filteredSquares = []
 
-    const columns = columnNumbers.map((element, index) => {
+    for (let i = 1; i <= 15; i++){
+      let matchingSquares = this.props.squares.filter(square => square.props.columnID === i)
+      console.log(matchingSquares)
+      filteredSquares.push(matchingSquares)
+    }
+
+    console.log(filteredSquares)
+
+    const columns = filteredSquares.map((element, index) => {
       return(
         <Column
-        key={index}
-        columnID={index + 1}
+          key={index}
+          squares={element}
         />
-      )
+        )
     })
 
     return (
       <div className="board">
         {columns}
       </div>
-    )
+      )
   }
 
 }

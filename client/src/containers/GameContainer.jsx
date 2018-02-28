@@ -2,6 +2,7 @@ import React, { Component } from "react"
 
 import Board from "../components/Board"
 import Rack from "../components/Rack"
+import Square from "../components/Square"
 import Tile from "../models/Tile"
 import ALPHABET from "../constants/Alphabet"
 
@@ -58,10 +59,21 @@ class GameContainer extends Component {
 
 
   render(){
+
+    let squares = []
+
+    for (let i = 1; i <= 15; i ++){
+      for (let j = 1; j <= 15; j++){
+        squares.push(<Square key={i.toString() + "-" + j.toString()}squareID={i} columnID={j} />)
+      }
+    }
+
+    console.log(squares)
+
     return (
       <div>
         <h1 className="heading-text">Welcome to Scrabble!</h1>
-        <Board/>
+        <Board squares={squares}/>
         <Rack tiles={this.state.playerTiles}/>
         <button onClick={this.startNewGame.bind(this)}>New Game</button>
       </div>

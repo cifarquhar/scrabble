@@ -10,21 +10,22 @@ class Column extends Component {
 
   render(){
 
-    const squareNumbers = ["","","","","","","","","","","","","","","",]
+    // const squareNumbers = ["","","","","","","","","","","","","","","",]
 
-    const squares = squareNumbers.map((element, index) => {
-      return(
-        <Square
-        key={index}
-        columnID={this.props.columnID}
-        squareID={index + 1}
-        />
-      )
-    })
+    // const squares = squareNumbers.map((element, index) => {
+    //   return(
+    //     <Square
+    //     key={index}
+    //     columnID={this.props.columnID}
+    //     squareID={index + 1}
+    //     />
+    //   )
+    // })
 
+    console.log(this.props.squares)
     return (
       <div className="column">
-        {squares}
+        {this.props.squares}
       </div>
     )
   }
